@@ -27,6 +27,8 @@ body {
 		rgba(77, 77, 77, 1) 100%
 	);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000",endColorstr="#4d4d4d",GradientType=1);
+	overflow-y: none;
+	min-height: 100vh;
 }
 
 .slide-in-left-enter {
