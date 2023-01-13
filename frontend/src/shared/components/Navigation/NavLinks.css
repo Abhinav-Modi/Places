@@ -23,6 +23,7 @@
 	border-radius: 3rem;
 }
 
+.logout,
 .nav-links a:hover,
 .nav-links a:active,
 .nav-links a.active {
@@ -76,4 +77,11 @@
 		background: #f8df00;
 		color: #292929;
 	}
+}
+.logout {
+	background: #f8df00;
+	border-color: #292929;
+	color: #292929;
+	border-radius: 3rem;
+	transition: all 0.3s ease-out;
 }
