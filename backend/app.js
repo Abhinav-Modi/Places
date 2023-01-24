@@ -2,6 +2,8 @@ const express = require("express");
 const HttpError = require("./models/http-errors");
 const placesRoutes = require("./routes/places-routes");
 const usersRoutes = require("./routes/users-routes");
+const { MongoClient, ServerApiVersion } = require("mongodb");
+const mongoose = require("mongoose");
 
 const app = express();
 //extract the json data from the request body and add it to the request object
@@ -28,4 +30,16 @@ app.use((error, req, res, next) => {
 		.json({ message: error.message || "An unknown error occurred!" });
 });
 
-app.listen(5000);
+//connect to the database
+mongoose.set("strictQuery", true);
+mongoose
+	.connect(
+		"mongodb+srv://Abhinav:hmfo9tekUXzF32t5@cluster0.w5h1eds.mongodb.net/wanderings?retryWrites=true&w=majority"
+	)
+	.then(() => {
+		console.log("Connected to database!");
+		app.listen(5000);
+	})
+	.catch((err) => {
+		console.log(err);
+	});
